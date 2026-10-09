@@ -3,52 +3,6 @@
 version = 4
 
 [[package]]
-name = "nexus-vault-common"
-version = "0.2.0"
-dependencies = [
- "soroban-sdk",
-]
-
-[[package]]
-name = "nexus-vault-cross-chain"
-version = "0.1.0"
-dependencies = [
- "nexus-vault-common",
- "k256",
- "soroban-sdk",
-]
-
-[[package]]
-name = "nexus-vault-insurance"
-version = "0.1.0"
-dependencies = [
- "nexus-vault-common",
- "soroban-sdk",
-]
-
-[[package]]
-name = "nexus-vault-oracle"
-version = "0.1.0"
-dependencies = [
- "soroban-sdk",
-]
-
-[[package]]
-name = "nexus-vault-privacy"
-version = "0.1.0"
-dependencies = [
- "nexus-vault-common",
- "soroban-sdk",
-]
-
-[[package]]
-name = "nexus-vault-reputation"
-version = "0.1.0"
-dependencies = [
- "soroban-sdk",
-]
-
-[[package]]
 name = "ahash"
 version = "0.8.12"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1274,6 +1228,52 @@ dependencies = [
 ]
 
 [[package]]
+name = "nexus-vault-common"
+version = "0.2.0"
+dependencies = [
+ "soroban-sdk",
+]
+
+[[package]]
+name = "nexus-vault-cross-chain"
+version = "0.1.0"
+dependencies = [
+ "k256",
+ "nexus-vault-common",
+ "soroban-sdk",
+]
+
+[[package]]
+name = "nexus-vault-insurance"
+version = "0.1.0"
+dependencies = [
+ "nexus-vault-common",
+ "soroban-sdk",
+]
+
+[[package]]
+name = "nexus-vault-oracle"
+version = "0.1.0"
+dependencies = [
+ "soroban-sdk",
+]
+
+[[package]]
+name = "nexus-vault-privacy"
+version = "0.1.0"
+dependencies = [
+ "nexus-vault-common",
+ "soroban-sdk",
+]
+
+[[package]]
+name = "nexus-vault-reputation"
+version = "0.1.0"
+dependencies = [
+ "soroban-sdk",
+]
+
+[[package]]
 name = "num-bigint"
 version = "0.4.8"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1534,14 +1534,14 @@ dependencies = [
 name = "receipt-anchor"
 version = "0.3.0"
 dependencies = [
- "nexus-vault-common",
  "budget-macros",
  "ed25519-dalek 3.0.0",
  "multisig-account",
+ "nexus-vault-common",
  "proptest",
  "receipt-shard",
  "sha2 0.10.9",
- "soroban-env-host 28.0.2",
+ "soroban-env-host 29.0.0",
  "soroban-sdk",
 ]
 
@@ -1586,8 +1586,8 @@ dependencies = [
 name = "refund-policy-vdf"
 version = "0.1.0"
 dependencies = [
- "nexus-vault-common",
  "crypto-bigint",
+ "nexus-vault-common",
  "soroban-sdk",
 ]
 
@@ -1595,9 +1595,9 @@ dependencies = [
 name = "refund-vault"
 version = "0.3.0"
 dependencies = [
- "nexus-vault-common",
  "budget-macros",
  "multisig-account",
+ "nexus-vault-common",
  "proptest",
  "receipt-anchor",
  "refund-policy-time",
@@ -1883,9 +1883,9 @@ dependencies = [
 
 [[package]]
 name = "soroban-builtin-sdk-macros"
-version = "28.0.2"
+version = "29.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "86ffd329211a50add3965a8f4a8f70e24fc5c8268c945566ab963029b12dce40"
+checksum = "3e68aeb2c6c7cd277a9aa3b129f2e1b02de80ec86c850cbbe03e4f3356e7bff9"
 dependencies = [
  "itertools",
  "proc-macro2",
@@ -1914,15 +1914,15 @@ dependencies = [
 
 [[package]]
 name = "soroban-env-common"
-version = "28.0.2"
+version = "29.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "610bb12ee937a56c2b629f8eb16efb7e47607cba4e79ab0c24132b9a53dd19a0"
+checksum = "b7fed49aef99c2f1c2e4b96c42b3e7d232d50921fd0d045f55654cd3f56ab92d"
 dependencies = [
  "crate-git-revision 0.0.9",
  "ethnum",
  "num-derive",
  "num-traits",
- "soroban-env-macros 28.0.2",
+ "soroban-env-macros 29.0.0",
  "soroban-wasmi",
  "static_assertions",
  "stellar-xdr 28.0.0",
@@ -1978,9 +1978,9 @@ dependencies = [
 
 [[package]]
 name = "soroban-env-host"
-version = "28.0.2"
+version = "29.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "36d7e5920c200939164cc58038224e2d90d7e2fabbfa505d6e2129d648dce7e2"
+checksum = "58a3486f87ccaa6ccc7742adff644d894c7898bb7c70b60e26184d56a69190af"
 dependencies = [
  "ark-bls12-381",
  "ark-bn254",
@@ -2005,8 +2005,8 @@ dependencies = [
  "sec1",
  "sha2 0.10.9",
  "sha3",
- "soroban-builtin-sdk-macros 28.0.2",
- "soroban-env-common 28.0.2",
+ "soroban-builtin-sdk-macros 29.0.0",
+ "soroban-env-common 29.0.0",
  "soroban-wasmi",
  "static_assertions",
  "stellar-strkey 0.0.13",
@@ -2030,9 +2030,9 @@ dependencies = [
 
 [[package]]
 name = "soroban-env-macros"
-version = "28.0.2"
+version = "29.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "077600bb175ea54592c1ac5983b8fb34ec9ab7a65f298af11d687b61e9d646a4"
+checksum = "32f91a147cc45888caf10934e3bed67d9a5bd8ef695b67f076bb4094748f784a"
 dependencies = [
  "itertools",
  "proc-macro2",
@@ -2169,8 +2169,8 @@ checksum = "6ce2be8dc25455e1f91df71bfa12ad37d7af1092ae736f3a6cd0e37bc7810596"
 name = "state-channel"
 version = "0.1.0"
 dependencies = [
- "nexus-vault-common",
  "ed25519-dalek 3.0.0",
+ "nexus-vault-common",
  "soroban-sdk",
 ]
 
