@@ -3,52 +3,6 @@
 version = 4
 
 [[package]]
-name = "nexus-vault-common"
-version = "0.2.0"
-dependencies = [
- "soroban-sdk",
-]
-
-[[package]]
-name = "nexus-vault-cross-chain"
-version = "0.1.0"
-dependencies = [
- "nexus-vault-common",
- "k256",
- "soroban-sdk",
-]
-
-[[package]]
-name = "nexus-vault-insurance"
-version = "0.1.0"
-dependencies = [
- "nexus-vault-common",
- "soroban-sdk",
-]
-
-[[package]]
-name = "nexus-vault-oracle"
-version = "0.1.0"
-dependencies = [
- "soroban-sdk",
-]
-
-[[package]]
-name = "nexus-vault-privacy"
-version = "0.1.0"
-dependencies = [
- "nexus-vault-common",
- "soroban-sdk",
-]
-
-[[package]]
-name = "nexus-vault-reputation"
-version = "0.1.0"
-dependencies = [
- "soroban-sdk",
-]
-
-[[package]]
 name = "ahash"
 version = "0.8.12"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -384,6 +338,12 @@ dependencies = [
 ]
 
 [[package]]
+name = "cmov"
+version = "0.5.4"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "0c9ea0ac24bc397ab3c98583a3c9ba74fa56b09a4449bbe172b9b1ddb016027a"
+
+[[package]]
 name = "const-oid"
 version = "0.9.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -394,6 +354,12 @@ name = "core-foundation-sys"
 version = "0.8.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "773648b94d0e5d620f64f280777445740e61fe701025087ec8b57f45c791888b"
+
+[[package]]
+name = "cpubits"
+version = "0.1.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "15b85f9c39137c3a891689859392b1bd49812121d0d61c9caf00d46ed5ce06ae"
 
 [[package]]
 name = "cpufeatures"
@@ -448,6 +414,17 @@ dependencies = [
 ]
 
 [[package]]
+name = "crypto-bigint"
+version = "0.7.5"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "1a52aa3fcda4e6302a9f48734f234d35d4721b96f8fe07d073f07ce9df4f0271"
+dependencies = [
+ "cpubits",
+ "ctutils",
+ "num-traits",
+]
+
+[[package]]
 name = "crypto-common"
 version = "0.1.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -481,6 +458,15 @@ name = "ctor-proc-macro"
 version = "0.0.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "e2931af7e13dc045d8e9d26afccc6fa115d64e115c9c84b1166288b46f6782c2"
+
+[[package]]
+name = "ctutils"
+version = "0.4.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "03bb0e1cc970d482d121d9a1744999169b69a07470b3d644a7894e53fcaf4574"
+dependencies = [
+ "cmov",
+]
 
 [[package]]
 name = "curve25519-dalek"
@@ -795,7 +781,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "b5e6043086bf7973472e0c7dff2142ea0b680d30e18d9cc40f267efbf222bd47"
 dependencies = [
  "base16ct",
- "crypto-bigint",
+ "crypto-bigint 0.5.5",
  "digest 0.10.7",
  "ff",
  "generic-array",
@@ -1274,6 +1260,52 @@ dependencies = [
 ]
 
 [[package]]
+name = "nexus-vault-common"
+version = "0.2.0"
+dependencies = [
+ "soroban-sdk",
+]
+
+[[package]]
+name = "nexus-vault-cross-chain"
+version = "0.1.0"
+dependencies = [
+ "k256",
+ "nexus-vault-common",
+ "soroban-sdk",
+]
+
+[[package]]
+name = "nexus-vault-insurance"
+version = "0.1.0"
+dependencies = [
+ "nexus-vault-common",
+ "soroban-sdk",
+]
+
+[[package]]
+name = "nexus-vault-oracle"
+version = "0.1.0"
+dependencies = [
+ "soroban-sdk",
+]
+
+[[package]]
+name = "nexus-vault-privacy"
+version = "0.1.0"
+dependencies = [
+ "nexus-vault-common",
+ "soroban-sdk",
+]
+
+[[package]]
+name = "nexus-vault-reputation"
+version = "0.1.0"
+dependencies = [
+ "soroban-sdk",
+]
+
+[[package]]
 name = "num-bigint"
 version = "0.4.8"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1534,10 +1566,10 @@ dependencies = [
 name = "receipt-anchor"
 version = "0.3.0"
 dependencies = [
- "nexus-vault-common",
  "budget-macros",
  "ed25519-dalek 3.0.0",
  "multisig-account",
+ "nexus-vault-common",
  "proptest",
  "receipt-shard",
  "sha2 0.10.9",
@@ -1586,8 +1618,8 @@ dependencies = [
 name = "refund-policy-vdf"
 version = "0.1.0"
 dependencies = [
+ "crypto-bigint 0.7.5",
  "nexus-vault-common",
- "crypto-bigint",
  "soroban-sdk",
 ]
 
@@ -1595,9 +1627,9 @@ dependencies = [
 name = "refund-vault"
 version = "0.3.0"
 dependencies = [
- "nexus-vault-common",
  "budget-macros",
  "multisig-account",
+ "nexus-vault-common",
  "proptest",
  "receipt-anchor",
  "refund-policy-time",
@@ -2169,8 +2201,8 @@ checksum = "6ce2be8dc25455e1f91df71bfa12ad37d7af1092ae736f3a6cd0e37bc7810596"
 name = "state-channel"
 version = "0.1.0"
 dependencies = [
- "nexus-vault-common",
  "ed25519-dalek 3.0.0",
+ "nexus-vault-common",
  "soroban-sdk",
 ]
 
