@@ -1,0 +1,10 @@
+# Canonical contributor identities.
+#
+# One person had committed under several git names, which splits a single
+# maintainer across multiple rows in `git shortlog`, GitHub's contributor
+# graph, and most repo-analysis tooling. This file maps them back together
+# retroactively without rewriting history.
+#
+# Verify with: git shortlog -sne
+
+mallison <muyideenallison@gmail.com> <muyideenallison@gmail.com>

@@ -1,0 +1,16 @@
+[package]
+name = "nexus-vault-common"
+version = "0.2.0"
+edition = "2021"
+
+[lib]
+crate-type = ["rlib"]
+
+[dependencies]
+soroban-sdk = { workspace = true }
+
+[dev-dependencies]
+soroban-sdk = { workspace = true, features = ["testutils"] }
+
+[features]
+telemetry = []

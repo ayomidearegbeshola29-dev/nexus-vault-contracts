@@ -1,0 +1,3 @@
+# Clippy configuration for nexus-vault-contracts workspace
+too-many-arguments-threshold = 10
+type-complexity-threshold = 250
