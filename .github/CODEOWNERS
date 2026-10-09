@@ -1,0 +1,7 @@
+# CODEOWNERS for nexus-vault-contracts
+
+# Require review from maintainers for smart contract source code
+contracts/ @nexus-vault/maintainers
+
+# Require review for contract threat model and security specifications
+docs/SECURITY_MODEL.md @nexus-vault/maintainers

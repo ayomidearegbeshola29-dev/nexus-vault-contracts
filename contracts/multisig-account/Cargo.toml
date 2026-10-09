@@ -1,0 +1,18 @@
+[package]
+name = "multisig-account"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+soroban-sdk = { workspace = true }
+
+[features]
+default = []
+testutils = ["soroban-sdk/testutils"]
+
+[target.'cfg(not(target_arch = "wasm32"))'.dev-dependencies]
+soroban-sdk = { workspace = true, features = ["testutils"] }
+ed25519-dalek = "3.0"
